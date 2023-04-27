@@ -28,6 +28,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -36,5 +39,11 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+
+    // Preference - DataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // Proto - DataStore
+    implementation("androidx.datastore:datastore:1.0.0")
 
 }
