@@ -19,6 +19,7 @@
 	-> Stores and Accesses data using (key-value) pairs
 	-> Work asynchronously
 	-> Runs on background thread (Dispatchers.IO)
+	-> Easy & quick Migration
 	-> No type Safety
 	
 	
@@ -28,4 +29,14 @@
 	-> Stores data as instances of a custom data type
 	-> Work asynchronously
 	-> Runs on background thread (Dispatchers.IO)
+	-> Easy & quick Migration
 	-> Requires you to define a schema using protocol buffers for type safety.
+
+
+#### Using DataStore correctly
+	
+	-> Never create more than one instance of DataStore for a given file in the same process.
+	-> The generic type of the DataStore must be immutable.
+	-> Never mix usages of SingleProcessDataStore and MultiProcessDataStore
+	
+
