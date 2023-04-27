@@ -1,7 +1,7 @@
 # DataLayer - DataStore
 
-        Jetpack DataStore is a data storage solution that allows you to store key-value pairs or typed objects with protocol 
-	buffers. DataStore uses Kotlin coroutines and Flow to store data asynchronously, consistently, and transactionally.
+    Jetpack DataStore is a data storage solution that allows you to store key-value pairs or typed objects with protocol 
+    buffers. DataStore uses Kotlin coroutines and Flow to store data asynchronously, consistently, and transactionally.
 	
 ### Introduction
     
