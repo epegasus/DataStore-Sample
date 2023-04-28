@@ -94,4 +94,3 @@ To observe:
 	dataPrefs.observe(this) {
 		Log.d("TAG", "Result: $it")
 	}
-
