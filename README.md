@@ -59,12 +59,12 @@ Generate a key:
 Save data as:
 	
 	fun save(data: String) {
-        	CoroutineScope(Dispatchers.Main).launch {
-        		context.dataStore.edit {
-          	  		it[dataKey] = data
-         		}
-       		}
-    	}
+		CoroutineScope(Dispatchers.Main).launch {
+			context.dataStore.edit {
+				it[dataKey] = data
+			}
+		}
+	}
 
 
 #### Step - 4
@@ -87,7 +87,7 @@ Retrieve data as:
 
 We can use flow as liveData for live updates
 	
-    	val dataPrefs = getDataPrefs().asLiveData()
+	val dataPrefs = getDataPrefs().asLiveData()
 
 To observe:
 
