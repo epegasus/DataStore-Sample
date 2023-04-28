@@ -42,6 +42,7 @@
 
 ### Preference Implementation
 
+
 #### Step - 1
 
 Create an instance as follow:
@@ -54,6 +55,7 @@ Create an instance as follow:
 Generate a key:
 	
 	private val dataKey = stringPreferencesKey("data")
+
 
 #### Step - 3
 
@@ -95,3 +97,42 @@ To observe:
 	dataPrefs.observe(this) {
 		Log.d("TAG", "Result: $it")
 	}
+
+### Proto Implementation
+
+
+#### Step - 1
+
+Add a plugin for protocol-buffer in Android Studio 'Protocol Buffers'
+
+
+#### Step - 2
+
+Create a file of 'proto' extension in the following path.
+
+	Project > app > src > main > proto (create a new directory) > data.proto (create a new file)
+
+
+#### Step - 3
+
+Write a schema with the help of documentation and protobuf with gradle (plugin)
+	
+-> [Proto3 Documentation](https://protobuf.dev/programming-guides/proto3/)
+
+-> [ProtoBug with Gradle](https://github.com/google/protobuf-gradle-plugin)
+
+
+
+
+#### Step - 1
+
+Create an instance as follow:
+	
+	private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "preferencesDataStore")
+
+
+#### Step - 2
+
+Generate a key:
+	
+	private val dataKey = stringPreferencesKey("data")
