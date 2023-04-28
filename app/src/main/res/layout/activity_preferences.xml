@@ -49,4 +49,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mtv_score" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lt_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mtv_pass">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/full_name"
+            android:inputType="textPersonName|textCapWords" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lt_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/lt_name"
+        app:layout_constraintStart_toStartOf="@+id/lt_name"
+        app:layout_constraintTop_toBottomOf="@+id/lt_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/scores"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/ms_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/result_pass"
+        app:layout_constraintEnd_toEndOf="@+id/lt_score"
+        app:layout_constraintStart_toStartOf="@+id/lt_score"
+        app:layout_constraintTop_toBottomOf="@+id/lt_score" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ms_result" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

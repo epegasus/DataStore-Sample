@@ -40,6 +40,10 @@ dependencies {
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
+
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+
     // Preference - DataStore
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 

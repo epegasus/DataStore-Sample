@@ -5,4 +5,9 @@
     <string name="preferences_datastore">Preferences DataStore</string>
     <string name="proto_datastore">Proto DataStore</string>
     <string name="none">-</string>
+    <string name="save">Save</string>
+    <string name="full_name">Full Name</string>
+    <string name="scores">Scores</string>
+    <string name="result">Result</string>
+    <string name="result_pass">Result (pass)</string>
 </resources>
