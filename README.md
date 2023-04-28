@@ -69,7 +69,7 @@
 
 #### Step - 4
 
-	Retrieve data as:
+Retrieve data as:
 	
 	private fun getDataPrefs(): Flow<String> = context.dataStore.data
         .catch {
@@ -85,11 +85,11 @@
             return@map it[dataKey] ?: "nill"
         }
 
-	We can use flow as liveData for live updates
+We can use flow as liveData for live updates
 	
     	val dataPrefs = getDataPrefs().asLiveData()
 
-	To observe:
+To observe:
 
 		dataPrefs.observe(this) {
 			Log.d("TAG", "Result: $it")
