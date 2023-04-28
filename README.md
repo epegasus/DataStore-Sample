@@ -43,20 +43,20 @@
 
 #### Step - 1
 
-	Create an instance as follow:
+Create an instance as follow:
 	
 	    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "preferencesDataStore")
 
 
 #### Step - 2
 
-	Generate a key:
+Generate a key:
 	
 		private val dataKey = stringPreferencesKey("data")
 
 #### Step - 3
 
-	Save data as:
+Save data as:
 	
 	fun save(data: String) {
         CoroutineScope(Dispatchers.Main).launch {
@@ -91,7 +91,7 @@ We can use flow as liveData for live updates
 
 To observe:
 
-		dataPrefs.observe(this) {
-			Log.d("TAG", "Result: $it")
-		}
+	dataPrefs.observe(this) {
+		Log.d("TAG", "Result: $it")
+	}
 
