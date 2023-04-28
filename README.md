@@ -45,26 +45,26 @@
 
 Create an instance as follow:
 	
-	    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "preferencesDataStore")
+	private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "preferencesDataStore")
 
 
 #### Step - 2
 
 Generate a key:
 	
-		private val dataKey = stringPreferencesKey("data")
+	private val dataKey = stringPreferencesKey("data")
 
 #### Step - 3
 
 Save data as:
 	
 	fun save(data: String) {
-        CoroutineScope(Dispatchers.Main).launch {
-        	context.dataStore.edit {
-            	it[dataKey] = data
-            }
-        }
-    }
+        	CoroutineScope(Dispatchers.Main).launch {
+        		context.dataStore.edit {
+          	  		it[dataKey] = data
+         		}
+       		}
+    	}
 
 
 #### Step - 4
