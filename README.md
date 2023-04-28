@@ -117,10 +117,8 @@ Create a file of 'proto' extension in the following path.
 
 Write a schema with the help of documentation and protobuf with gradle (plugin)
 	
-	[Proto3 Documentation](https://protobuf.dev/programming-guides/proto3/)
-	[ProtoBug with Gradle](https://github.com/google/protobuf-gradle-plugin)
-
-
+[Proto3 Documentation](https://protobuf.dev/programming-guides/proto3/)
+[ProtoBug with Gradle](https://github.com/google/protobuf-gradle-plugin)
 
 
 
