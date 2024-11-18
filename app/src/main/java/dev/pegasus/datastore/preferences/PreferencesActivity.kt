@@ -1,11 +1,9 @@
 package dev.pegasus.datastore.preferences
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import dev.pegasus.datastore.databinding.ActivityPreferencesBinding
 
-@SuppressLint("SetTextI18n")
 class PreferencesActivity : AppCompatActivity() {
 
     private val binding by lazy { ActivityPreferencesBinding.inflate(layoutInflater) }
@@ -22,9 +20,9 @@ class PreferencesActivity : AppCompatActivity() {
     }
 
     private fun fetchData() {
-        preferenceManager.namePrefs.observe(this) { binding.mtvName.text = "Name: $it" }
-        preferenceManager.scorePrefs.observe(this) { binding.mtvScore.text = "Score: $it" }
-        preferenceManager.passPrefs.observe(this) { binding.mtvPass.text = "Pass: $it" }
+        preferenceManager.namePrefs.observe(this) { "Name: $it".also { binding.mtvName.text = it } }
+        preferenceManager.scorePrefs.observe(this) { "Score: $it".also { binding.mtvScore.text = it } }
+        preferenceManager.passPrefs.observe(this) { "Pass: $it".also { binding.mtvPass.text = it } }
     }
 
     private fun onSaveClick() {

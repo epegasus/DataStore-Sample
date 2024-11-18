@@ -10,4 +10,8 @@
     <string name="scores">Scores</string>
     <string name="result">Result</string>
     <string name="result_pass">Result (pass)</string>
+    <string name="query">Query</string>
+    <string name="page_number">Page Number</string>
+    <string name="results_per_page">Results Per Page</string>
+    <string name="load">Load</string>
 </resources>
