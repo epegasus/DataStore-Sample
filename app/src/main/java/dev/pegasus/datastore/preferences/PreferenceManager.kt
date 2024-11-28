@@ -2,17 +2,15 @@ package dev.pegasus.datastore.preferences
 
 import android.content.Context
 import android.util.Log
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.asLiveData
 import dev.pegasus.datastore.utils.GeneralUtils.TAG
 import dev.pegasus.datastore.utils.GeneralUtils.showToast
+import dev.pegasus.datastore.utils.dataStore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -30,9 +28,6 @@ import java.io.IOException
  */
 
 class PreferenceManager(private val context: Context) {
-
-    // Instance
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "preferencesDataStore")
 
     // Keys
     private val nameKey = stringPreferencesKey("name")
@@ -56,7 +51,7 @@ class PreferenceManager(private val context: Context) {
             }
         }.map {
             // No type safety.
-            return@map it[nameKey] ?: "nill"
+            return@map it[nameKey] ?: "nil"
         }
 
     private fun getScorePrefs(): Flow<Int> = context.dataStore.data

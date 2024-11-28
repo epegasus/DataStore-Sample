@@ -6,4 +6,132 @@
     android:layout_height="match_parent"
     tools:context=".proto.ProtoActivity">
 
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/mt_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/proto_datastore" />
+
+    <!-- Query Text View -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtv_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mt_container" />
+
+    <!-- Page Number Text View -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtv_page_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mtv_query" />
+
+    <!-- Results Per Page Text View -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/mtv_results_per_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/none"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mtv_page_number" />
+
+    <!-- Query Input Field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lt_query"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mtv_results_per_page">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/query"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Page Number Input Field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lt_page_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/lt_query"
+        app:layout_constraintStart_toStartOf="@+id/lt_query"
+        app:layout_constraintTop_toBottomOf="@+id/lt_query">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_page_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/page_number"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Results Per Page Input Field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lt_results_per_page"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/lt_page_number"
+        app:layout_constraintStart_toStartOf="@+id/lt_page_number"
+        app:layout_constraintTop_toBottomOf="@+id/lt_page_number">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_results_per_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/results_per_page"
+            android:inputType="number" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Save Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lt_results_per_page" />
+
+    <!-- Load Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/load"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mb_save" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
