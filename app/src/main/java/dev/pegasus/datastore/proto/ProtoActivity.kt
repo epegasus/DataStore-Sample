@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import dev.pegasus.datastore.databinding.ActivityProtoBinding
+import dev.pegasus.datastore.utils.launchWhenStarted
 import kotlinx.coroutines.launch
 
 
@@ -23,11 +24,13 @@ class ProtoActivity : AppCompatActivity() {
     }
 
     private fun fetchData() {
-        lifecycleScope.launchWhenStarted {
-            protoPreferenceManager.searchRequestData.collect { request ->
-                "Query: ${request.query}".also { binding.mtvQuery.text = it }
-                "Page Number: ${request.pageNumber}".also { binding.mtvPageNumber.text = it }
-                "Results Per Page: ${request.resultsPerPage}".also { binding.mtvResultsPerPage.text = it }
+        launchWhenStarted {
+            lifecycleScope.launch {
+                protoPreferenceManager.searchRequestData.collect { request ->
+                    "Query: ${request.query}".also { binding.mtvQuery.text = it }
+                    "Page Number: ${request.pageNumber}".also { binding.mtvPageNumber.text = it }
+                    "Results Per Page: ${request.resultsPerPage}".also { binding.mtvResultsPerPage.text = it }
+                }
             }
         }
     }

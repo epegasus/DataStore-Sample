@@ -1,6 +1,7 @@
 package dev.pegasus.datastore.preferences
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import dev.pegasus.datastore.databinding.ActivityPreferencesBinding
 
@@ -26,8 +27,12 @@ class PreferencesActivity : AppCompatActivity() {
     }
 
     private fun onSaveClick() {
+        if (binding.etName.text?.isEmpty() == true || binding.etScore.text?.isEmpty() == true) {
+            Toast.makeText(this, "Fields can't be empty", Toast.LENGTH_SHORT).show()
+            return
+        }
         val name = binding.etName.text.toString().trim()
-        val scores = binding.etScore.text.toString().trim().toInt()
+        val scores = binding.etScore.text.toString().trim().toIntOrNull() ?: 0
         val result = binding.msResult.isChecked
 
         preferenceManager.save(name, scores, result)
